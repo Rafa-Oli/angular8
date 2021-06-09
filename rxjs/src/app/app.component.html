@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" fxFill>
+
+  <div fxFlex='20'>
+
+    <mat-radio-group [(ngModel)]='option' fxLayout="column" fxLayoutAlign="center start"></mat-radio-group>
+
+  </div>
+  <div fxFlex='70' fxLayout="column" fxLayoutAlign="center start"></div>
+  <ng-container [ngSwitch]='option'>
+
+  </ng-container>
+
+</div>
