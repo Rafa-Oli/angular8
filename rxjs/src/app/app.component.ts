@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  public option: string;
+  public option = 'basic-creation';
 
 }
