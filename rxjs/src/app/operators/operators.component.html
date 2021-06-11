@@ -4,10 +4,10 @@
     <button (click)='tapClick()'> Tap </button>
     <button (click)='takeClick()'> Take </button>
     <button (click)='debounceTimeClick()'> DebounceTime </button>
+    <button (click)='debounceTimeSearch()'> DebounceTime Search </button>
 </div>
-
-<div class="debounce-area" matRipple matRippleCentered='true' matRippleColor='rgb(240,166,166,0.4)'
-    matRippleRadius='40'>
-
+<div>
+    <label for="">Search by:</label>
+    <input type="text" placeholder="Type something" (keyup)='searchBy_UsingDebounce($event)' [(ngModel)]='searchInput'>
 
 </div>
