@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { from, fromEvent, interval } from 'rxjs';
-import { delay, filter, map, tap } from 'rxjs/operators';
+import { from, fromEvent, interval, Observable, Subscription } from 'rxjs';
+import { delay, filter, first, last, map, take, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-operators',
@@ -56,5 +56,32 @@ export class OperatorsComponent implements OnInit {
       delay(1000)
     )
       .subscribe((pos) => console.log(pos));
+  }
+
+  public takeClick() {
+    const observable = new Observable((observer) => {
+      let i;
+      for (i = 0; i < 20; i++)
+        setTimeout(() => observer.next(Math.floor(Math.random() * 100)), i * 100);
+      setTimeout(() => observer.complete(), i * 100);
+    });
+    const s: Subscription = observable
+      .pipe(
+        tap(i => console.log(i)),
+        // take(10)
+        // first()
+        last()
+      )
+      .subscribe(v => console.log('Output: ', v),
+        (error) => (console.error(error)),
+        () => console.log('Complete')
+      );
+
+    const interval = setInterval(() => {
+      console.log('Checking...')
+      if (s.closed)
+        console.warn('Subscription closed');
+      clearInterval(interval)
+    }, 200)
   }
 }
