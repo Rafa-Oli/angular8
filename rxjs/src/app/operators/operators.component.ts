@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { from, fromEvent, interval, Observable, Subject, Subscription } from 'rxjs';
-import { debounceTime, delay, filter, first, last, map, take, tap } from 'rxjs/operators';
+import { from, fromEvent, interval, Observable, Subject, Subscription, timer } from 'rxjs';
+import { debounceTime, delay, filter, first, last, map, take, takeUntil, takeWhile, tap } from 'rxjs/operators';
 import { MatRipple } from '@angular/material/core';
 
 @Component({
@@ -105,5 +105,33 @@ export class OperatorsComponent {
     this.searchEntry$
       .pipe(debounceTime(100))
       .subscribe((result) => console.log(result))
+  }
+
+  takeWhileClick(){
+    interval(500)
+    .pipe(
+      takeWhile((value, index) => (value < 5))
+    )
+    .subscribe(
+      (i) => console.log('takeWhile: ', i),
+      (error) => console.error(error),
+      () => console.log('Completed')
+      )
+
+  }
+
+  takeUntilClick(){
+
+    let duetime$ = timer(5000); //emite um evento em 5 seg
+
+    interval(500)
+      .pipe(
+       takeUntil(duetime$)
+      )
+      .subscribe(
+        (i) => console.log('takeUntil: ', i),
+        (error) => console.error(error),
+        () => console.log('Completed')
+      )
   }
 }
