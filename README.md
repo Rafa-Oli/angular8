@@ -2,4 +2,4 @@
 
 ## *Concepts covered:* 
 
-- [x] Operators RXJS (Map, Delay,Filter, Tap)
+- [x] Operators RXJS (Map, Delay,Filter, Tap, TakeUntil, TakeWhile)
