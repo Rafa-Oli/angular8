@@ -1,0 +1,10 @@
+<div fxFill fxLayout="column" fxLayoutAlign="center start">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Select the options bellow</h5>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor='let option of options$ | async'>{{option}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
