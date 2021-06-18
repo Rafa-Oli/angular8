@@ -1,5 +1,4 @@
 <div class="col-md-6 content">
-
   <div>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios1" value="basic-creation">
@@ -19,12 +18,19 @@
         Async
       </label>
     </div>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios4" value="error-handling">
+      <label class="form-check-label" for="exampleRadios4">
+        Error Handling
+      </label>
+    </div>
   </div>
   <div>
     <ng-container [ngSwitch]='option'>
       <app-basic-creation *ngSwitchCase="'basic-creation'" ></app-basic-creation>
       <app-operators *ngSwitchCase="'operators'" ></app-operators>
       <app-async *ngSwitchCase="'async'" ></app-async>
+      <app-error-handling *ngSwitchCase="'error-handling'" ></app-error-handling>
     </ng-container>
 
   </div>
