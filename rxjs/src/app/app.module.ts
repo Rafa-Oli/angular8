@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { OperatorsComponent } from './operators/operators.component';
 import { AsyncComponent } from './async/async.component';
 import { ErrorHandlingComponent } from './error-handling/error-handling.component';
+import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ErrorHandlingComponent } from './error-handling/error-handling.componen
     BasicCreationComponent,
     OperatorsComponent,
     AsyncComponent,
-    ErrorHandlingComponent
+    ErrorHandlingComponent,
+    DragAndDropComponent
   ],
   imports: [
     BrowserModule,

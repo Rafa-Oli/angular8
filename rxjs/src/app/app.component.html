@@ -24,6 +24,12 @@
         Error Handling
       </label>
     </div>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios5" value="dragAndDrop">
+      <label class="form-check-label" for="exampleRadios5">
+        Drag and Drop
+      </label>
+    </div>
   </div>
   <div>
     <ng-container [ngSwitch]='option'>
@@ -31,6 +37,7 @@
       <app-operators *ngSwitchCase="'operators'" ></app-operators>
       <app-async *ngSwitchCase="'async'" ></app-async>
       <app-error-handling *ngSwitchCase="'error-handling'" ></app-error-handling>
+      <app-drag-and-drop *ngSwitchCase="'dragAndDrop'" ></app-drag-and-drop>
     </ng-container>
 
   </div>
