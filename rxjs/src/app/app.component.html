@@ -1,43 +1,56 @@
 <div class="col-md-6 content">
   <div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios1" value="basic-creation">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios1"
+        value="basic-creation">
       <label class="form-check-label" for="exampleRadios1">
         Basic Creation
       </label>
-      </div>
-      <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios2" value="operators">
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios2"
+        value="operators">
       <label class="form-check-label" for="exampleRadios2">
         Operators
       </label>
     </div>
-      <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios3" value="async">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios3"
+        value="async">
       <label class="form-check-label" for="exampleRadios3">
         Async
       </label>
     </div>
-      <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios4" value="error-handling">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios4"
+        value="error-handling">
       <label class="form-check-label" for="exampleRadios4">
         Error Handling
       </label>
     </div>
-      <div class="form-check">
-      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios5" value="dragAndDrop">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios5"
+        value="dragAndDrop">
       <label class="form-check-label" for="exampleRadios5">
         Drag and Drop
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios6"
+        value="unsubscribe">
+      <label class="form-check-label" for="exampleRadios6">
+        Unsubscribe
       </label>
     </div>
   </div>
   <div>
     <ng-container [ngSwitch]='option'>
-      <app-basic-creation *ngSwitchCase="'basic-creation'" ></app-basic-creation>
-      <app-operators *ngSwitchCase="'operators'" ></app-operators>
-      <app-async *ngSwitchCase="'async'" ></app-async>
-      <app-error-handling *ngSwitchCase="'error-handling'" ></app-error-handling>
-      <app-drag-and-drop *ngSwitchCase="'dragAndDrop'" ></app-drag-and-drop>
+      <app-basic-creation *ngSwitchCase="'basic-creation'"></app-basic-creation>
+      <app-operators *ngSwitchCase="'operators'"></app-operators>
+      <app-async *ngSwitchCase="'async'"></app-async>
+      <app-error-handling *ngSwitchCase="'error-handling'"></app-error-handling>
+      <app-drag-and-drop *ngSwitchCase="'dragAndDrop'"></app-drag-and-drop>
+      <app-unsubscribe *ngSwitchCase="'unsubscribe'"></app-unsubscribe>
     </ng-container>
 
   </div>

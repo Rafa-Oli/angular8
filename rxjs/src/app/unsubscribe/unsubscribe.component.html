@@ -1,0 +1,11 @@
+<div fxFill fxLayout="column" fxLayoutAlign="center start">
+    <div fxFill fxLayout="row" fxLayoutAlign="space-around center">
+        <button (click)='subscribe()'> Subscribe All </button>
+        <div class="spinner-border" role="status" *ngIf='subscriptionsAreActive'>
+            <span class="visually-hidden"></span>
+        </div>
+        <div>
+            <button (click)='unSubscribe()' [disabled]='!subscriptionsAreActive'> unSubscribe All </button>
+        </div>
+    </div>
+</div>

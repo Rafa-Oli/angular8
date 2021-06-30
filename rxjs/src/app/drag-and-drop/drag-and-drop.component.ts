@@ -24,13 +24,13 @@ export class DragAndDropComponent implements OnInit {
     let mousemove = fromEvent(document, 'mousemove');
     let mouseup = fromEvent(document, 'mouseup');
 
-    mousedown.subscribe((ed: MouseEvent) => {
+    mousedown.subscribe((ed: any) => {
       let x = ed.pageX;
       let y = ed.pageY;
 
       mousemove
       .pipe(takeUntil(mouseup))
-      .subscribe((em: MouseEvent) => {
+      .subscribe((em: any) => {
         let offsetx = x - em.pageX;
         let offsety = y - em.pageY;
         this.top -= offsety;
