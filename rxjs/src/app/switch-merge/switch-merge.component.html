@@ -1,0 +1,15 @@
+<div fxFill fxLayout="column" fxLayoutAlign="center start">
+    <div>
+        <label>Search by: </label>
+        <input type="text" #searchBy style="margin:20px;" placeholder="Type something" autocomplete="off"
+            [(ngModel)]='searchInput'>
+    </div>
+    <div>
+        <ul class="list-group" *ngFor='let p of people$ | async'>
+            <li class="list-group-item">Name: {{p.firstname}}, {{p.lastname}}</li>
+            <li class="list-group-item">Email: {{p.email}}</li>
+            <li class="list-group-item">City: {{p.city}}</li>
+            <li class="list-group-item">Country: {{p.county}}</li>
+        </ul>
+    </div>
+</div>

@@ -42,6 +42,13 @@
         Unsubscribe
       </label>
     </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" [(ngModel)]='option' id="exampleRadios7"
+        value="switch-merge">
+      <label class="form-check-label" for="exampleRadios6">
+        Switch / Merge
+      </label>
+    </div>
   </div>
   <div>
     <ng-container [ngSwitch]='option'>
@@ -51,6 +58,7 @@
       <app-error-handling *ngSwitchCase="'error-handling'"></app-error-handling>
       <app-drag-and-drop *ngSwitchCase="'dragAndDrop'"></app-drag-and-drop>
       <app-unsubscribe *ngSwitchCase="'unsubscribe'"></app-unsubscribe>
+      <app-switch-merge *ngSwitchCase="'switch-merge'"></app-switch-merge>
     </ng-container>
 
   </div>

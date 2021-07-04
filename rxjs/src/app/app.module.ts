@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +12,7 @@ import { AsyncComponent } from './async/async.component';
 import { ErrorHandlingComponent } from './error-handling/error-handling.component';
 import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
+import { SwitchMergeComponent } from './switch-merge/switch-merge.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,16 @@ import { UnsubscribeComponent } from './unsubscribe/unsubscribe.component';
     AsyncComponent,
     ErrorHandlingComponent,
     DragAndDropComponent,
-    UnsubscribeComponent
+    UnsubscribeComponent,
+    SwitchMergeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
