@@ -31,7 +31,8 @@ export class SwitchMergeComponent implements OnInit, AfterViewInit {
       map((e) => this.filterPeople(this.searchInput)
       ));
     this.people$ = fetch$
-    .pipe(mergeAll())
+    .pipe(mergeAll());
+
 
 
   }
