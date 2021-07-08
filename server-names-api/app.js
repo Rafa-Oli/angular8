@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
         return res.status(500).json({ error: err, message: err.message });
       }
 
-      return res.status(200).json(data);
+      setTimeout(() => {return res.status(200).json(data)}, 3000);
     });
 });
 

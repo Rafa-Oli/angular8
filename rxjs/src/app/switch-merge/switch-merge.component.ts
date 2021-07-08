@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { fromEvent, Observable, of } from 'rxjs';
+import { map, mergeAll } from 'rxjs/operators';
 import { Person } from './person.model';
 
 @Component({
@@ -20,10 +21,22 @@ export class SwitchMergeComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
   }
   ngAfterViewInit(): void {
-    this.firstOption();
+    // this.firstOption();
+    this.secondOption();
   }
 
-  filterPeople(searchInput: string): Observable<Person[]> {
+  public secondOption(){
+    let keyup$ = fromEvent(this.element.nativeElement, 'keyup');
+    let fetch$ = keyup$.pipe(
+      map((e) => this.filterPeople(this.searchInput)
+      ));
+    this.people$ = fetch$
+    .pipe(mergeAll())
+
+
+  }
+
+  public filterPeople(searchInput: string): Observable<Person[]> {
     if (searchInput.length === 0) return of([]);
     return this.http.get<Person[]>(`${this.url}/${searchInput}`)
   }
